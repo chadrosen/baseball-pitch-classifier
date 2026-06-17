@@ -22,7 +22,7 @@ def classify():
                 'pfx_x', 'pfx_z', 'spin_rate', 'game_date']
     for field in required:
         if field not in body:
-            abort(400, description=f'Missing required field: {field}')
+            abort(422, description=f'Missing required field: {field}')
 
     features = normalize_pitch_features(
         pitch_hand=body['pitch_hand'],

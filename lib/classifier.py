@@ -24,7 +24,7 @@ def classify_pitch(features: dict) -> str:
         return 'sinker'
 
     # Cutter: mid-high velocity, glove-side cut, moderate rise
-    if velo >= 86.0 and pfx_x <= -2.0 and pfx_z >= 3.0:
+    if velo >= 92.0 and pfx_x <= -2.0 and pfx_z >= 3.0:
         return 'cutter'
 
     # Slider: mid velocity, glove-side break, moderate-to-heavy drop

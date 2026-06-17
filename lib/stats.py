@@ -25,7 +25,7 @@ class PitcherStats:
         avg_velo = round(entry['total_velocity'] / (count + 1), 1)
         return {
             'pitcher_id': pitcher_id,
-            'total_pitches': count,
+            'total_pitches': len(entry['pitch_counts']),
             'avg_velocity': avg_velo,
             'pitch_mix': dict(entry['pitch_counts']),
         }

@@ -13,8 +13,7 @@ def normalize_pitch_features(pitch_hand: str, velocity: float, pfx_x: float,
     if isinstance(game_date, str):
         game_date = datetime.strptime(game_date, '%Y-%m-%d').date()
 
-    is_new_vendor = game_date >= VENDOR_CHANGE_DATE
-
+    # Normalize coordinate frame: flip pfx_x for left-handed pitchers
     if pitch_hand == 'L':
         pfx_x = -pfx_x
 

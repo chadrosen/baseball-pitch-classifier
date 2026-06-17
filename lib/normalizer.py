@@ -1,6 +1,4 @@
-from datetime import date, datetime
-
-VENDOR_CHANGE_DATE = date(2025, 4, 15)
+from datetime import datetime
 
 
 def normalize_pitch_features(pitch_hand: str, velocity: float, pfx_x: float,

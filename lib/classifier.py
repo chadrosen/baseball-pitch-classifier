@@ -16,7 +16,6 @@ def classify_pitch(features: dict) -> str:
     pfx_z = features['pfx_z']
 
     # 4-seam fastball: high velocity, arm-side run, backspin rise
-    # Bug 2: threshold is 95.0; correct value is 92.0
     if velo >= 95.0 and pfx_x >= 5.0 and pfx_z >= 8.0:
         return '4-seam fastball'
 

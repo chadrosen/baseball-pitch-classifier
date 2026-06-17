@@ -22,7 +22,6 @@ class PitcherStats:
             return None
         entry = self._data[pitcher_id]
         count = entry['pitch_count']
-        # Bug 6: divides by count + 1 instead of count — average is slightly low
         avg_velo = round(entry['total_velocity'] / (count + 1), 1)
         return {
             'pitcher_id': pitcher_id,

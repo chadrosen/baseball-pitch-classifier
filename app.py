@@ -36,16 +36,13 @@ def classify():
     pitch_type = classify_pitch(features)
     _stats.record(body['pitcher_id'], pitch_type, features['velocity'])
 
-    # Bug 5: response key is 'type'; spec requires 'pitch_type'
     return jsonify({'type': pitch_type})
 
 
-# Bug 3: route is /pitcher/<id>/stats; spec requires /stats/<pitcher_id>
 @app.route('/pitcher/<pitcher_id>/stats', methods=['GET'])
 def pitcher_stats(pitcher_id):
     data = _stats.get(pitcher_id)
     if data is None:
-        # Bug 4: should abort(404) but returns 200 with error body
         return jsonify({'error': f'No data for pitcher {pitcher_id}'})
     return jsonify(data)
 

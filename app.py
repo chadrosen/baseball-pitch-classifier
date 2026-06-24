@@ -39,7 +39,7 @@ def classify():
     return jsonify({'type': pitch_type})
 
 
-@app.route('/pitcher/<pitcher_id>/stats', methods=['GET'])
+@app.route('/stats/<pitcher_id>', methods=['GET'])
 def pitcher_stats(pitcher_id):
     data = _stats.get(pitcher_id)
     if data is None:
